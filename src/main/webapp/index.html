@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="/resources/jquery/jquery-2.1.3.js"></script>
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+<script src="/resources/vue/vue.js"></script>
+
 </head>
-<body>
-	Hello wl!
-</body>
+
+  <body>
+    <div id="app" class="btn btn-default">
+  		{{ message }}
+	</div>
+  </body>
+  <script type="text/javascript">
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+	    message: 'Hello Vue!'
+	  }
+	})
+</script>
 </html>
