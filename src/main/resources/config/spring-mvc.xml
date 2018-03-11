@@ -30,12 +30,19 @@
             </list>  
         </property>  
     </bean>
-     	<mvc:interceptors>
-     		<mvc:interceptor>
-     			<mvc:mapping path="/service/**"/>
-     			<bean class="com.wl.edu.wlroom.security.LoginInterceptor" />
-     		</mvc:interceptor>
-         </mvc:interceptors>
+
+    <mvc:interceptors>
+    <!--对所有的请求记性拦截-->
+    <!--<beans:beanclass="com.sunp.common.interceptor.Myinterceptor"/>-->
+        <!--对特定的请求进行拦截-->
+    	<mvc:interceptor>
+	        <!--进行拦截的路径-->
+	        <mvc:mapping path="/**"/> 
+	        <!--不进行拦截的路径-->   
+	        <mvc:exclude-mapping path="/lib/**" /> 
+	        <bean class="com.wl.edu.wlroom.security.LoginInterceptor"/>
+	    </mvc:interceptor>
+	</mvc:interceptors>
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->  
 <!--     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址  
